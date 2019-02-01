@@ -1,18 +1,18 @@
 ---
 title: "include2.md"
-author: "Aji John"
-date: "12/10/2018"
+author: "CJ Battey and LB Buckley"
+date: "2/1/2019"
 output: html_document
 ---
 
-
-## Preamble2
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+## Temperature and First Flowering Date
+2. For chicory (Cichorium intybus), create separate scatter plots of FFD and average temperatures in September, January, May, and July. Add a linear trend line and include its R2 and equation on the plots. Include these plots (one for each month) with your responses. 
+a.	Which month shows the strongest correlation between average temperatures and FFD, in terms of R2? Which have the largest (or most negative) slope? 
+b.	Propose a hypothesis for why this is the case. What aspects of plant physiology might be impacted by temperatures at different times of year? 
 
 
-## Usecase 2
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+## Interspecific Comparisons and Ecological Impacts
+3.	For each species, create a scatter plot of FFD as a function of average temperatures in January. Add a linear trend line and include its R2 and equation on the plots. Include these plots (one for each species) with your responses. 
+a.	How many species show negative correlations between temperature and FFD (ie FFD decreases as temperature increases) ? 
+b.	Which species shows the most negative relationship between FFD and temperature? The most positive?  
+c.	Propose a hypothesis for why some species show higher or lower slopes in regressions of FFD and temperature. 

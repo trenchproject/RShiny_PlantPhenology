@@ -1,8 +1,5 @@
 #
-# Part of trench project (Grasshoppers)
-# author Aji John https://github.com/ajijohn
-# adapted from Shiny 
-# Server
+#Plant phenology
 #
 
 library(shiny)
@@ -11,7 +8,7 @@ library(cowplot)
 #
 rgb.palette <- colorRampPalette(c("red", "orange", "blue"), space = "rgb")
 
-# Do house  keeping
+# Load data
 absM.all=read.csv(paste(getwd(),"/gh-all.csv",sep = ""))
 absM.all.ssy=read.csv(paste(getwd(),"/gh-all.ssy.csv",sep = ""))
 
