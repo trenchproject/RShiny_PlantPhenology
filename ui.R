@@ -52,10 +52,6 @@ fluidPage(
  fluidRow(
    column(12,plotOutput(outputId="PhenologyPlot")
    )),
- fluidRow(
-   column(12,
-          includeMarkdown("include3.md")
-   )),
  hr()
 
 
