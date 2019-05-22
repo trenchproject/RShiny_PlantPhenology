@@ -7,7 +7,7 @@ output: html_document
 
 ### Relationships between temperature and First Flowering Date (FFD)   
 <p>
-In this exercise, you can generate figures showing either annual or monthly temperatures on the x-axis and FFD on the y-axis, for five common Eastern wildflower species that were included in the historic and modern datasets. The table below shows approximately when each typically flowers during the growing season:    
+In the next exercise, you can generate figures that show either annual or monthly temperatures on the x-axis, and FFD on the y-axis. Note that these graphs will not show you changes over time. Instead, what you are looking at is the relationship between temperature and phenology. Higher y-axis values indicate later first flowering, and vice versa. Therefore, a trend line with a negative slope (pointing downwards to the right) means that warmer temperatures are associated with earlier first flowering. You can choose to plot data for any of five common Eastern wildflower species that were included in the historic and modern datasets. The table below shows approximately when each typically flowers during the growing season:    
 </p>
 
 <p>
@@ -50,7 +50,7 @@ In this exercise, you can generate figures showing either annual or monthly temp
         </table>
     </table>
 </div>
-</p>
+</p>         
 
 <p align="center">
 <img src="http://faculty.washington.edu/lbuckley/wordpress/wp-content/uploads/2019/05/AC_bud.jpg">
@@ -60,14 +60,14 @@ In this exercise, you can generate figures showing either annual or monthly temp
 <figcaption>Amelanchier canadensis budding, flowering, and fruiting; images: Plant Image Library/阿橋 HQ/Paul Moody</figcaption>      
 </p>    
 
+Try answering the following questions:
 
-2. For chicory (Cichorium intybus), create separate scatter plots of FFD and average temperatures in September, January, May, and July. Add a linear trend line and include its R2 and equation on the plots. Include these plots (one for each month) with your responses. 
-a.	Which month shows the strongest correlation between average temperatures and FFD, in terms of R2? Which have the largest (or most negative) slope? 
-b.	Propose a hypothesis for why this is the case. What aspects of plant physiology might be impacted by temperatures at different times of year? 
+1. Create scatterplots for all species, showing annual temperature on the x-axis.
+    1.1 For which two species does phenology advance with warming (you see a clear negative slope)?   
+    1.2 What do these species have in common?     
+    
+2. Create scatterplots for all species, showing January-April temperature on the x-axis.
+    2.1 Now, which species have flowering phenologies that advance with warming?
+    2.2 Does this make sense with what you observed above about which months have warmed the most over time?     
 
-
-## Interspecific Comparisons and Ecological Impacts
-3.	For each species, create a scatter plot of FFD as a function of average temperatures in January. Add a linear trend line and include its R2 and equation on the plots. Include these plots (one for each species) with your responses. 
-a.	How many species show negative correlations between temperature and FFD (ie FFD decreases as temperature increases) ? 
-b.	Which species shows the most negative relationship between FFD and temperature? The most positive?  
-c.	Propose a hypothesis for why some species show higher or lower slopes in regressions of FFD and temperature. 
+3. Propose a hypothesis for why some species show higher or lower slopes when you plot FFD against temperature. (There are many possibilities!)

@@ -45,4 +45,4 @@ Below is a figure that will allow you to look at changes in temperature over a p
     
 2. Plot average temperatures across time for each month in turn.        
     2.1 Which month/s have generally seen the greatest increases in temperature?        
-    2.2 How might this be relevant to plant phenology?
+    2.2 How might this be relevant to plant phenology? (Hint: A species is likely to be most affected by warming in the months before and during its typical flowering period.)
