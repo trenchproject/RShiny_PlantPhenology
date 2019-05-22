@@ -8,7 +8,7 @@ output: html_document
 ### Relationships between temperature and First Flowering Date (FFD)   
 <p>
 In the next exercise, you can generate figures that show either annual or monthly temperatures on the x-axis, and FFD on the y-axis. Note that these graphs will not show you changes over time. Instead, what you are looking at is the relationship between temperature and phenology. Higher y-axis values indicate later first flowering, and vice versa. Therefore, a trend line with a negative slope (pointing downwards to the right) means that warmer temperatures are associated with earlier first flowering. You can choose to plot data for any of five common Eastern wildflower species that were included in the historic and modern datasets. The table below shows approximately when each typically flowers during the growing season:    
-</p>
+<p>
 
 <p>
 <h4>Wildflower species</h4>
