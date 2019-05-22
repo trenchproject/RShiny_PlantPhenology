@@ -1,0 +1,12 @@
+name: PlantPhenology
+title: PlantPhenology
+username:
+account: huckley
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 888610
+bundleId: 2099939
+url: https://huckley.shinyapps.io/PlantPhenology/
+when: 1558476264.13606
+asMultiple: FALSE
+asStatic: FALSE

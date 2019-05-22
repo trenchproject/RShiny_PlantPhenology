@@ -7,7 +7,7 @@ output: html_document
 
 ### Relationships between temperature and First Flowering Date (FFD)   
 <p>
-In this exercise, you can generate figures showing either annual or monthly temperatures on the x-axis and FFD on the y-axis, for five common Eastern wildflower species that were included in the historic and modern datasets. The table below shows approximately when each typically flowers during the growing season:    
+In the next exercise, you can generate figures showing either annual or monthly temperatures on the x-axis and FFD on the y-axis, for five common Eastern wildflower species that were included in the historic and modern datasets. The table below shows approximately when each typically flowers during the growing season:    
 </p>
 
 <p>
@@ -50,7 +50,7 @@ In this exercise, you can generate figures showing either annual or monthly temp
         </table>
     </table>
 </div>
-</p>
+</p>         
 
 <p align="center">
 <img src="http://faculty.washington.edu/lbuckley/wordpress/wp-content/uploads/2019/05/AC_bud.jpg">
