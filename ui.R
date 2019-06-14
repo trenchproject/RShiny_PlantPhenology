@@ -7,7 +7,7 @@ library(tidyverse)
 
 
 #specify choices
-specs= c("Amelanchier_canadensis","Cichorium_intybus","Erigeron_cadensis","Erigeron_pulchellus","Vaccinium_corymbosum")
+specs= c("Amelanchier_canadensis","Cichorium_intybus","Erigeron_canadensis","Erigeron_pulchellus","Vaccinium_corymbosum")
 
 # Load data
 clim.dat=read.csv(paste(getwd(),"/Ex2_climatedata.csv",sep = ""))
