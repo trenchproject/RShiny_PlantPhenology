@@ -12,6 +12,8 @@ rgb.palette <- colorRampPalette(c("red", "orange", "blue"), space = "rgb")
 # Load data
 clim.dat=read.csv(paste(getwd(),"/Ex2_climatedata.csv",sep = ""))
 phen.dat=read.csv(paste(getwd(),"/Ex2_phenologydata_long.csv",sep = "")) #Ex2_phenologydata.csv
+phen.dat$Species <- as.character(phen.dat$Species)
+phen.dat$Species[phen.dat$Species=="Amelanchier_cadensis"] <- "Amelanchier_canadensis"
 
 # Define server logic to do filtering
 shinyServer(function(input, output) {
