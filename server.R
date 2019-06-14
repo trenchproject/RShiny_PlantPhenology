@@ -15,6 +15,8 @@ phen.dat=read.csv(paste(getwd(),"/Ex2_phenologydata_long.csv",sep = "")) #Ex2_ph
 phen.dat$Species <- as.character(phen.dat$Species)
 phen.dat$Species[phen.dat$Species=="Amelanchier_cadensis"] <- "Amelanchier_canadensis"
 phen.dat$Species[phen.dat$Species=="Erigeron_cadensis"] <- "Erigeron_canadensis"
+clim.dat$Annual= rowMeans(clim.dat[,2:13], na.rm=TRUE)
+
 
 # Define server logic to do filtering
 shinyServer(function(input, output) {
