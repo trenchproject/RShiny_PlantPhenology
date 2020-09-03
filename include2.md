@@ -56,18 +56,5 @@ In the next exercise, you can generate figures that show either annual or monthl
 <img src="http://faculty.washington.edu/lbuckley/wordpress/wp-content/uploads/2019/05/AC_bud.jpg">
 <img src="http://faculty.washington.edu/lbuckley/wordpress/wp-content/uploads/2019/05/AC_flower.jpg" height="192">
 <img src="http://faculty.washington.edu/lbuckley/wordpress/wp-content/uploads/2019/05/AC_fruit.jpg" height="192">
-</p>
-<figcaption>Amelanchier canadensis budding, flowering, and fruiting; images: Plant Image Library/阿橋 HQ/Paul Moody</figcaption>      
+<p align="center">Amelanchier canadensis budding, flowering, and fruiting; images: Plant Image Library/阿橋 HQ/Paul Moody<p>     
 </p>    
-
-Try answering the following questions:
-
-1. Create scatterplots for all species, showing annual temperature on the x-axis.
-    1.1 For which two species does phenology advance with warming (you see a clear negative slope)?   
-    1.2 What do these species have in common?     
-    
-2. Create scatterplots for all species, showing January-April temperature on the x-axis.
-    2.1 Now, which species have flowering phenologies that advance with warming?
-    2.2 Does this make sense with what you observed above about which months have warmed the most over time?     
-
-3. Propose a hypothesis for why some species show higher or lower slopes when you plot FFD against temperature. (There are many possibilities!)
