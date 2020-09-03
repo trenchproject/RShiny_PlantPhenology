@@ -30,7 +30,7 @@ In the next exercise, you can generate figures that show either annual or monthl
             <tr>
                 <td>Cichorium intybus</td>
                 <td>Common chicory</td>
-                <td>Flowers between June and July/td>
+                <td>Flowers between June and July</td>
             </tr>
             <tr>
                 <td>Erigeron cadensis</td>

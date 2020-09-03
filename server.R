@@ -24,32 +24,42 @@ shinyServer(function(input, output) {
   clim.data <- reactive({
     #restrict years
     x <- strsplit(as.character(input$year), "\\s+")
-    print(x)
     from <- as.numeric(x[1])
     to <-   as.numeric(x[2])
-    print(from)
-    print(to)
     clim.dat %>% filter(Year >=  from & Year <= to)
-    
-    #pick month
-    #clim.dat=  %>% filter(species %in% input$month.sel)
-   
+
     })
   
+  #pick species
   phen.data <- reactive({
-    #pick species
     phen.dat %>% filter(Species %in% input$species.sel)
-    
   })
   
   
   output$ClimatePlot <- renderPlot({
     
     ggplot(data=clim.data(), aes_string(x = 'Year', y=input$clim.month))+
-      theme_bw()+
-      geom_point()+geom_smooth(method="lm", se=FALSE)+
-      ylab("Temperature (C)")+
-      xlab("Year")
+      theme_bw() +
+      geom_point() + geom_smooth(method="lm", se=FALSE)+
+      ylab("Temperature (°C)") +
+      xlab("Year") + 
+      theme(axis.text=element_text(size=12), axis.title=element_text(size=12), legend.text=element_text(size=12), legend.title=element_text(size=12))
+    
+  })
+  
+  output$stats <- renderText({
+    
+    fit <- lm(clim.data()[, input$clim.month] ~ clim.data()[, "Year"])
+
+    pval <- signif(summary(fit)$coefficients[2, 4], digits = 2)
+    if (pval < 0.05) {
+      pval <- paste("<b style = 'color:red;'>", pval, "</b>")
+    }
+    
+    HTML("<b>Trend line analysis</b>
+         <br>Slope:", signif(as.numeric(fit$coefficients[2]), digits = 2), 
+         "<br> p-value:", pval,
+         "<br> R<sup>2</sup> value: ", signif(summary(fit)$r.squared, digits = 2))
   })
   
   output$PhenologyPlot <- renderPlot({
@@ -58,7 +68,8 @@ shinyServer(function(input, output) {
       geom_point()+
       geom_smooth(method="lm",se=F)+
       facet_wrap(~Species, ncol=2, scales="free") +
-      theme_bw()+ylab("phenology (doy)")+xlab("Temperature (C)")
+      theme_bw()+ylab("phenology (doy)")+xlab("Temperature (°C)") +
+      theme(axis.text=element_text(size=12), axis.title=element_text(size=12), legend.text=element_text(size=12), legend.title=element_text(size=12))
     
     # plot_grid(p1, p2, nrow=1, rel_widths=c(1,1.5) )
   })

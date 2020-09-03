@@ -38,8 +38,9 @@ fluidPage(
  
   # Climate plot
   mainPanel(
-    column(12,plotOutput(outputId="ClimatePlot", width="800px",height="600px")
-  )),
+    plotOutput(outputId="ClimatePlot", width="800px",height="600px"),
+    htmlOutput("stats"),
+    ),
  hr(),
  fluidRow(
    column(12,

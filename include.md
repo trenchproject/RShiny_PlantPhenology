@@ -7,7 +7,7 @@ output: html_document
 
 ## Phenological Responses to Climate Change: A Wildflower Case Study
 *Image sources:*  
-*1. Arabidopsis thaliana (a mustard cress plant) flowers more quickly when grown at 23 degrees C (right) than 16 C; image: MPI for Developmental Biology/Schmid*   
+*1. Arabidopsis thaliana (a mustard cress plant) flowers more quickly when grown at 23 °C (right) than 16 °C; image: MPI for Developmental Biology/Schmid*   
 *2. A page from one of Thoreau's diaries in which he transcribed his phenological observations into an organized chart; image:Concord Museum*  
 
 <p>
