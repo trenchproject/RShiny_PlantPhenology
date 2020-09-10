@@ -58,8 +58,7 @@ shinyServer(function(input, output) {
     
     HTML("<b>Trend line analysis</b>
          <br>Slope:", signif(as.numeric(fit$coefficients[2]), digits = 2), 
-         "<br> p-value:", pval,
-         "<br> R<sup>2</sup> value: ", signif(summary(fit)$r.squared, digits = 2))
+         "<br> p-value:", pval)
   })
   
   output$PhenologyPlot <- renderPlot({

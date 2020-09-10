@@ -48,7 +48,7 @@ fluidPage(
    )),
  fluidRow(
    column(4,selectInput('x', 'Climate Variable', c('January'='Jan','February'='Feb','March'='Mar','April'='Apr','May'='May','June'='Jun','July'='Jul','August'='Aug','September'='Sep','October'='Oct','November'='Nov','December'='Dec','Annual'='Annual','January through April'='JanApr'))),
-   column(4,selectInput('species.sel', 'Select species to plot', choices= specs, multiple=TRUE, selectize=FALSE, selected=specs))
+   column(4,selectInput('species.sel', 'Select species to plot', choices= specs, multiple=TRUE, selected=specs))
    
    ),
  fluidRow(
