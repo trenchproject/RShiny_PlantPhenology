@@ -1,17 +1,16 @@
-#
 # Plant phenology
-#
 
 library(shiny)
 library(tidyverse)
-
+library(stringr)
+library(cowplot)
 
 #specify choices
-specs= c("Amelanchier_canadensis","Cichorium_intybus","Erigeron_canadensis","Erigeron_pulchellus","Vaccinium_corymbosum")
+specs <- c("Amelanchier canadensis", "Cichorium intybus", "Erigeron canadensis", "Erigeron pulchellus", "Vaccinium corymbosum")
+months <- c('January'='Jan','February'='Feb','March'='Mar','April'='Apr','May'='May','June'='Jun','July'='Jul','August'='Aug','September'='Sep','October'='Oct','November'='Nov','December'='Dec','Annual'='Annual','January through April'='JanApr')
 
 # Load data
-clim.dat=read.csv(paste(getwd(),"/Ex2_climatedata.csv",sep = ""))
-clim.dat$Annual= rowMeans(clim.dat[,2:13], na.rm=TRUE)
+clim.dat = read.csv("Ex2_climatedata.csv")
 
 # Define UI 
 shinyUI(
@@ -19,43 +18,35 @@ shinyUI(
 # Define UI
 fluidPage(  
   title = "Plant phenology",
-  fluidRow(
-    column(12,
-           includeMarkdown("include.md")
-    )),
 
- hr(),
+  includeMarkdown("include.md"),
+
+  hr(),
   # Pick options for climate plot
- fluidRow(
-     column(4,selectInput('clim.month', 'Month', c('January'='Jan','February'='Feb','March'='Mar','April'='Apr','May'='May','June'='Jun','July'='Jul','August'='Aug','September'='Sep','October'='Oct','November'='Nov','December'='Dec','Annual'='Annual'))),
-     column(4,    sliderInput('year', 'Range of years to plot', 
-                              min=min(clim.dat$Year),
-                              max=max(clim.dat$Year), 
-                              value=c(min(clim.dat$Year), 
-                                      max(clim.dat$Year)),
-                              format = "####",sep = "",step = 1))
+  fluidRow(
+     column(4,selectInput('clim.month', 'Month', choices = months)),
+     column(4,sliderInput('year', 'Range of years to plot', 
+                          min = min(clim.dat$Year),
+                          max = max(clim.dat$Year), 
+                          value = c(min(clim.dat$Year), max(clim.dat$Year)),
+                          format = "####",sep = "",step = 1))
   ),
  
   # Climate plot
-  mainPanel(
-    plotOutput(outputId="ClimatePlot", width="800px",height="600px"),
-    htmlOutput("stats"),
-    ),
- hr(),
- fluidRow(
-   column(12,
-          includeMarkdown("include2.md")
-   )),
- fluidRow(
-   column(4,selectInput('x', 'Climate Variable', c('January'='Jan','February'='Feb','March'='Mar','April'='Apr','May'='May','June'='Jun','July'='Jul','August'='Aug','September'='Sep','October'='Oct','November'='Nov','December'='Dec','Annual'='Annual','January through April'='JanApr'))),
-   column(4,selectInput('species.sel', 'Select species to plot', choices= specs, multiple=TRUE, selected=specs))
-   
-   ),
- fluidRow(
-   column(12,plotOutput(outputId="PhenologyPlot")
-   )),
- hr()
+  plotOutput(outputId = "ClimatePlot", width = "800px", height = "600px"),
+  htmlOutput("stats"),
 
-
-)
+  
+  hr(),
+  includeMarkdown("include2.md"),
+  
+  fluidRow(
+    column(4,selectInput('x', 'Climate Variable', choices = months)),
+    column(4,selectInput('species.sel', 'Select species to plot', choices = specs, multiple = TRUE, selected = specs))
+  ),
+  
+  plotOutput(outputId="PhenologyPlot"),
+  hr()
+  
+  )
 )
