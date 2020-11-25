@@ -13,7 +13,7 @@ guide1 <- Cicerone$
     description = "The slope tells us that the temperature in January is only increasing by 0.0041 &deg;C per year. A p-value greater than 0.05 means that the trend is not signicifant."
   )$
   step(
-    el = "month-wrapper",
+    el = "month1-wrapper",
     title = "Month selection",
     description = HTML("Here, you can choose a month you want to plot. 
                        There are options for annual and <b>January through April</b>, which is especially relavent for plants phenology.")
@@ -41,15 +41,15 @@ guide2 <- Cicerone$
                        <br>Let's see the phenology of other species. Hit next.")
   )$
   step(
-    el = "spec-wrapper",
-    title = "Species selection",
-    description = HTML("Here, you can select which species to plot. Let's select all species by clicking on <b>Select All</b> and move on."),
+    el = "month2-wrapper",
+    title = "Month",
+    description = "This shows the month plotted. Try selecting <b>April</b> and hit next.",
     position = "right"
   )$
   step(
-    el = "var-wrapper",
-    title = "Month",
-    description = "This shows the month plotted. Try selecting <b>April</b> and hit next.",
+    el = "spec-wrapper",
+    title = "Species selection",
+    description = HTML("Here, you can select which species to plot. Let's select all species by clicking on <b>Select All</b> and move on."),
     position = "right"
   )$
   step(

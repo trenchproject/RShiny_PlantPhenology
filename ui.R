@@ -9,21 +9,31 @@ library(shinyWidgets)
 library(cicerone)
 library(shinyjs)
 library(shinyBS)
-#library(cowplot)
 library(plotly)
 
 #specify choices
 specs <- c("Amelanchier canadensis", "Cichorium intybus", "Erigeron canadensis", "Erigeron pulchellus", "Vaccinium corymbosum")
-months <- c('January'='Jan','February'='Feb','March'='Mar','April'='Apr','May'='May','June'='Jun','July'='Jul','August'='Aug','September'='Sep','October'='Oct','November'='Nov','December'='Dec','Annual'='Annual','January through April'='JanApr')
+months <- c('January' = 'Jan',
+            'February' = 'Feb',
+            'March' = 'Mar',
+            'April' = 'Apr',
+            'May' = 'May',
+            'June' = 'Jun',
+            'July' = 'Jul',
+            'August' = 'Aug',
+            'September' = 'Sep',
+            'October' = 'Oct',
+            'November' = 'Nov',
+            'December' = 'Dec',
+            'Annual' = 'Annual', 
+            'January through April' = 'JanApr')
+
 
 # Load data
 clim.dat = read.csv("Ex2_climatedata.csv")
 
-# Define UI 
-shinyUI(
 
-# Define UI
-fluidPage(id = "page",
+shinyUI <- fluidPage(id = "page",
   use_cicerone(),
   useShinyjs(),
   title = "Plant phenology",
@@ -47,32 +57,28 @@ fluidPage(id = "page",
     size = "sm"
   ), 
   hr(),
-  # Pick options for climate plot
-  fluidRow(
-    
-    column(4, 
-           div(
-             id = "month-wrapper",
-             pickerInput('clim.month', 'Month', choices = months)
-           )
-    ),
   
-    column(4, 
-           div(
-             id = "year-wrapper",
-             sliderInput('year', 'Range of years', min = min(clim.dat$Year),
-                          max = max(clim.dat$Year), 
-                          value = c(min(clim.dat$Year), max(clim.dat$Year)),
-                          format = "####", sep = "", step = 1)
-           )
+  sidebarLayout(
+    sidebarPanel(
+      div(
+        id = "month1-wrapper",
+        pickerInput('clim.month', 'Month', choices = months)
+      ),
+      br(),
+      div(
+        id = "year-wrapper",
+        sliderInput('year', 'Range of years', min = min(clim.dat$Year),
+                    max = max(clim.dat$Year), 
+                    value = c(min(clim.dat$Year), max(clim.dat$Year)),
+                    format = "####", sep = "", step = 1)
+      )
+    ),
+    mainPanel(
+      plotOutput(outputId = "ClimatePlot", width = "800px", height = "600px"),
+      htmlOutput("stats")
     )
   ),
- 
-  # Climate plot
-  plotOutput(outputId = "ClimatePlot", width = "800px", height = "600px"),
-  htmlOutput("stats"),
 
-  
   hr(),
   includeMarkdown("include2.md"),
   br(),
@@ -95,29 +101,31 @@ fluidPage(id = "page",
   hr(),
   div(
     id = "viz-wrapper",
-
-    fluidRow(
-      column(4, 
-             div(
-               id = "month-wrapper", 
-               pickerInput('month', 'Month', choices = months)
-             )
+    sidebarLayout(
+      sidebarPanel(
+        div(
+          id = "month2-wrapper", 
+          pickerInput('month', 'Month', choices = months)
+        ),
+        
+        div(
+          id = "spec-wrapper", 
+          pickerInput('species', 'Species', choices = specs, multiple = TRUE, selected = specs[1],
+                      options = list(`actions-box` = TRUE))
+        ),
+        width = 3
       ),
-      column(4, 
-             div(
-               id = "spec-wrapper", 
-               pickerInput('species', 'Species', choices = specs, multiple = TRUE, selected = specs[1],
-                           options = list(`actions-box` = TRUE))
-             )
+      
+      mainPanel(
+        # h4("ggplot"),
+        # plotOutput(outputId = "PhenologyPlot"),
+        # hr(),
+        # h4("Plotly"),
+        plotlyOutput(outputId = "PhenologyPlotly"),
+        width = 9
       )
-    ),
-    
-    # h4("ggplot"),
-    # plotOutput(outputId = "PhenologyPlot"),
-    # hr(),
-    # h4("Plotly"),
-    plotlyOutput(outputId = "PhenologyPlotly"),
-    hr()
     )
-  )
+  ),
+  hr()
 )
+
