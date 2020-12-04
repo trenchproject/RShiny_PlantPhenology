@@ -10,7 +10,8 @@ guide1 <- Cicerone$
   step(
     el = "stats",
     title = "Statistics",
-    description = "The slope tells us that the temperature in January is only increasing by 0.0041 &deg;C per year. A p-value greater than 0.05 means that the trend is not signicifant."
+    description = HTML("The slope tells us that the temperature in January is only increasing by 0.0041 &deg;C per year. A p-value greater than 0.05 means that the trend is not significant.
+                       In other words, the slope of the trendline is not significantly different from 0.")
   )$
   step(
     el = "month1-wrapper",

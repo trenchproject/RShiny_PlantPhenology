@@ -5,10 +5,10 @@ PlantPhenology is an interactive shiny app that allows any user to visualize the
 ## Prerequisites for opening in Rstudio
 Git and Rstudio ([Instructions](https://resources.github.com/whitepapers/github-and-rstudio/))  
 Installation of the following R packages:
-shiny, ggplot2, magrittr, stringr
+shiny, ggplot2, magrittr, stringr, shinyWidgets, cicerone, shinyjs, shinyBS, plotly
 
 ```
-pkgs <- c("shiny", "ggplot2", "magrittr", "stringr")
+pkgs <- c("shiny", "ggplot2", "magrittr", "stringr", "shinyWidgets", "cicerone", "shinyjs", "shinyBS", "plotly")
 lapply(pkgs, FUN = function(x) {
     if (!require(x, character.only = TRUE)) {
       install.packages(x, dependencies = TRUE)
