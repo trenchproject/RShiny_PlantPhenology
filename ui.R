@@ -35,6 +35,7 @@ clim.dat = read.csv("Ex2_climatedata.csv")
 
 shinyUI <- fluidPage(id = "page",
   use_cicerone(),
+  setBackgroundColor(color = "#C7DAE0"),
   useShinyjs(),
   title = "Plant phenology",
 
