@@ -5,8 +5,9 @@ account: huckley
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 888610
-bundleId: 2099939
+bundleId: 4792881
 url: https://huckley.shinyapps.io/PlantPhenology/
-when: 1558476264.13606
+when: 1625593240.11084
+lastSyncTime: 1625593240.11085
 asMultiple: FALSE
 asStatic: FALSE
